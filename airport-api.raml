@@ -22,15 +22,15 @@ types:
           example: !include Examples/AirportNoIdExample.raml
   
   /showById/{Code}:
-      get:
-        responses:
-          200:
-            body:
-              application/json:
-                type: Airport
-                example: 
-          400:
-            body:
-              application/json:
-                example:
-                  message: Airport not found in the database
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Airport
+              example: 
+        400:
+          body:
+            application/json:
+              example:
+                message: Airport not found in the database
