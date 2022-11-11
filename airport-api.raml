@@ -12,7 +12,10 @@ types:
           body:
             application/json:
               type: Airport[]
-              example: 
+              example: !include Examples/AirportGetExample.raml
+
+  /addAirport:
+    
   
   /showById:
     /{Code}:
