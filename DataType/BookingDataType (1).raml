@@ -4,7 +4,7 @@ type: object
 properties:
   bookingId?: integer
   bookingDate?: datetime-only
-  ticketCost: number
+  ticketCost?: number
   noOfPassengers: integer
   user: !include UserDataType.raml
   flight: !include ScheduledFlightDataType.raml
