@@ -1,2 +1,46 @@
 #%RAML 1.0
 title: flight-api
+
+types:
+  Flight: !include FlightDataType/flight-dataType.raml
+/flights:
+  get:
+    responses:
+      200:
+        body:
+          application/json:
+            type: Flight[]
+  post:
+    body:
+      application/json:
+        type: Flight
+        example: 
+          
+  
+            
+  /{ID}:
+    get:
+     responses:
+      200:
+        body:
+          application/json:
+            type: Flight
+    delete:
+       responses:
+        200:
+          body:
+           application/json:
+            example:
+              message: Flight deleted
+    put:
+      body:
+        application/json:
+          type: Flight
+          example:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Flight updated 
+              
