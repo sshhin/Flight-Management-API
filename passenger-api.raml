@@ -56,4 +56,13 @@ types:
         400:
           body:
             application/json:
+              example:
+                message: Passenger not found
+  
+  /deletePassenger/{pnrNumber}:
+    delete:
+      responses:
+        200:
+          body:
+            application/json:
               
