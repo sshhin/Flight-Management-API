@@ -2,9 +2,15 @@
 title: schedule-api
 
 types:
-  schedule: !include DataType/ScheduleDataType.raml
+  Schedule: !include DataType/ScheduleDataType.raml
 
 /schedule:
   /showAll:
     get:
-      
+      responses:
+        200:
+          body:
+            application/json:
+              type: Schedule[]
+              example: !include Examples/ScheduleGetAllExample.raml
+              
