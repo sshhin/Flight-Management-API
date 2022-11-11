@@ -1,2 +1,78 @@
 #%RAML 1.0
 title: user-api
+types:
+  User: !include /DataType/UserDataType.raml
+
+/User:
+  
+  get:
+    description: User details
+    queryParameters:
+      type:
+        required: false
+        enum:
+          - Admin
+          - User
+    responses:
+      200:
+        body:
+          application/json:
+            type: User[]
+            example:
+              
+
+  post:
+    body:
+      application/json:
+        type: User
+        example:  
+         
+    responses:
+      201:
+        body:
+          application/json:
+            example:
+              message: User created
+  /{ID}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: User
+              example:
+                
+        400:
+          body:
+            application/json:
+              example:
+                message: Account not found.
+    delete:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message:User deleted (but not really)
+        400:
+          body:
+            application/json:
+              example:
+                message: User not founded 
+    put:
+      body:
+        application/json:
+          type: User
+          example:
+            
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: User updated.
+        400:
+          body:
+            application/json:
+              example:
+                message: User nhi mila.
