@@ -4,9 +4,10 @@ title: airport-api
 types:
   Airport: !include DataType/AirportDataType.raml
 
-/airport/showAll:
-  get:
-    responses:
+/airport:
+  /showAll:
+    get:
+      responses:
         200:
           body:
             application/json:
@@ -18,7 +19,7 @@ types:
       body:
         application/json:
           type: Airport
-          example: !include Examples/AirportNoIdExample.raml
+          example: !include 
   
   /showById:
     /{Code}:
