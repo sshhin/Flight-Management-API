@@ -5,4 +5,13 @@ types:
   Passenger: !include DataType/PassengerDataType.raml
 
 /passenger:
-  /showAll
+  /showAll:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Passenger[]
+              example: !include Examples/PassengerGetAllExample.raml
+
+  /ad
