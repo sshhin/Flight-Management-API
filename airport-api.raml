@@ -27,7 +27,7 @@ types:
               example:
                 message: Airport added
   
-  /showById/{Code}:
+  /showById/{code}:
     get:
       responses:
         200:
@@ -41,4 +41,6 @@ types:
               example:
                 message: Airport not found in the database
 
-  /
+  /modifyAirport/{code}:
+    put:
+      
