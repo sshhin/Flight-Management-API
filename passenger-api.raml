@@ -14,4 +14,13 @@ types:
               type: Passenger[]
               example: !include Examples/PassengerGetAllExample.raml
 
-  /ad
+  /addPassenger:
+    post:
+      body:
+        application/json:
+          type: Passenger
+          example: !include Examples/PassengerPostExample.raml
+      responses:
+        201:
+          body:
+            
