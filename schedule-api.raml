@@ -41,7 +41,7 @@ types:
               example:
                 message: Schedule not found
   
-  /modifySchedule/{id}:
+  /modifySchedule/{scheduleId}:
     put:
       body:
         application/json:
@@ -59,7 +59,7 @@ types:
               example:
                 message: Schedule not found
   
-  /deleteSchedule/{id}:
+  /deleteSchedule/{scheduleId}:
     delete:
       responses:
         200:
