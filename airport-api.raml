@@ -19,10 +19,9 @@ types:
       body:
         application/json:
           type: Airport
-          example: !include 
+          example: !include Examples/AirportNoIdExample.raml
   
-  /showById:
-    /{Code}:
+  /showById/{Code}:
       get:
         responses:
           200:
