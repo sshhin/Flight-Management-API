@@ -35,3 +35,12 @@ types:
             application/json:
               type: Schedule
               example: !include Examples/ScheduleExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: Schedule not found
+  
+  /modifySchedule/{id}:
+    put:
+      
