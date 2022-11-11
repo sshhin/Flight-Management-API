@@ -46,13 +46,13 @@ types :
       body:
         application/json:
           type: ScheduledFlight
-          example:
+          example: !include /Examples/ScheduledFlightPutExample.raml
       responses:
         200:
           body:
             application/json:
-              type: ScheduledFlight
               example : 
+                message : ScheduledFlight modified.
         400 :
           body:
             application/json:
