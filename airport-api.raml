@@ -27,7 +27,7 @@ types:
               example:
                 message: Airport added
   
-  /showById/{code}:
+  /showById/{airportCode}:
     get:
       responses:
         200:
@@ -41,7 +41,7 @@ types:
               example:
                 message: Airport not found
 
-  /modifyAirport/{code}:
+  /modifyAirport/{airportCode}:
     put:
       body:
         application/json:
@@ -59,7 +59,7 @@ types:
               example:
                 message: Airport not found
 
-  /deleteAirport/{code}:
+  /deleteAirport/{airportCode}:
     delete:
       responses:
         200:
