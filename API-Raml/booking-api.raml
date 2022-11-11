@@ -1,0 +1,83 @@
+#%RAML 1.0
+title: Booking API
+
+types:
+  Booking : !include /BookingDataType/BookingDataType.raml
+
+
+/booking:
+  /viewbooking:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type : Booking[]
+              example:
+            
+  /addBooking:
+    post:
+      body:
+        application/json:
+          type: Booking
+          example:
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                message: Booking added.
+
+  /viewBooking:
+    /{id}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Booking
+                example:
+                  
+          400:
+            body:
+              application/json:
+                example:
+                  message: No booking found
+
+  /modifyBooking:
+    put:
+      body:
+        application/json:
+          type: Booking
+          example:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Booking
+              example:
+        400:
+          body:
+            application/json:
+              example:
+                message: No Booking found
+
+  /deleteBooking :
+    /{id} :
+      delete:
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: Booking deleted
+
+          400:
+            body:
+              application/json:
+                example:
+                  message: Booking not found
+
+        
+                
+          
