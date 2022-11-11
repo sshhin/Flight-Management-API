@@ -13,4 +13,10 @@ types:
             application/json:
               type: Schedule[]
               example: !include Examples/ScheduleGetAllExample.raml
-              
+
+  /addSchedule:
+    post:
+      body:
+        application/json:
+          type: Schedule
+          example: !include 
