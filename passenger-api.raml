@@ -46,4 +46,14 @@ types:
       body:
         application/json:
           type: Passenger
-          example: !include 
+          example: !include Examples/PassengerExample.raml
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Passenger updated
+        400:
+          body:
+            application/json:
+              
