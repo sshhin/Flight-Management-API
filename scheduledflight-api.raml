@@ -1,2 +1,91 @@
 #%RAML 1.0
 title: scheduledflight-api
+
+types : 
+  ScheduledFlight : !include Datatype/ScheduledFlightDataType.raml
+
+/scheduledflight :
+  /showAllSchFlights :
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type : ScheduledFlight[]
+              example : 
+  
+  /addSchFlight :
+    post:
+      body:
+        application/json:
+          type: ScheduledFlight
+          example : 
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                message: ScheduledFlight added.
+  
+  /showByFno:
+    /{fno}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: ScheduledFlight
+                example : 
+          400 :
+            body:
+              application/json:
+                example:
+                  message : Flight not found. 
+      
+  /modifySchFlight:
+    put:
+      body:
+        application/json:
+          type: ScheduledFlight
+          example:
+      responses:
+        200:
+          body:
+            application/json:
+              type: ScheduledFlight
+              example : 
+        400 :
+          body:
+            application/json:
+              example:
+                message : ScheduledFlight not found.
+
+  /deleteSchFlight :
+    /{sfid} :
+      delete:
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message : ScheduledFlight deleted.
+          400 :
+            body:
+              application/json:
+                example:
+                  message : ScheduledFlight not found.
+
+    /showByAirport :
+      /{src}/{dsc}/{date} :
+        get:
+          responses:
+            200:
+              body:
+                application/json:
+                  type: ScheduledFlight[]
+                  example : 
+            400 :
+              body:
+                application/json:
+                  example:
+                    message : ScheduledFlight not found. 
