@@ -19,4 +19,11 @@ types:
       body:
         application/json:
           type: Schedule
-          example: !include 
+          example: !include Examples/SchedulePostExample.raml
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                message: Schedule added
+                
