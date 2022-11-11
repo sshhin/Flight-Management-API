@@ -1,0 +1,30 @@
+#%RAML 1.0
+title: Airport API
+
+types:
+  Airport: !include AirportDataType/AirportDataType.raml
+
+/airport:
+  /showAll:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Airport[]
+              example: 
+  
+  /{Code}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Airport
+              example: 
+        400:
+          body:
+            application/json:
+              example:
+                message: Airport not found in the database
+        
