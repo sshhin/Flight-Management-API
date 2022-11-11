@@ -39,4 +39,11 @@ types:
           body:
             application/json:
               example:
-                message: Scheule 
+                message: Passenger not found
+  
+  /modifyPassenger/{pnrNumber}:
+    put:
+      body:
+        application/json:
+          type: Passenger
+          example: !include 
