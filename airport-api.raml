@@ -34,7 +34,7 @@ types:
           body:
             application/json:
               type: Airport
-              example: !include Examples/AirportGetIdExample.raml
+              example: !include Examples/AirportExample.raml
         400:
           body:
             application/json:
@@ -46,4 +46,9 @@ types:
       body:
         application/json:
           type: Airport
-          example: !include
+          example: !include Examples/AirportExample.raml
+      responses:
+        200:
+          body:
+            application/json:
+              
