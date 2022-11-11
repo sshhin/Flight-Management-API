@@ -27,4 +27,10 @@ types:
               example:
                 message: Passenger added
   
-  /showById/{pnrNumber}
+  /showById/{pnrNumber}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: 
