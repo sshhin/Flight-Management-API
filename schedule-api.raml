@@ -61,4 +61,12 @@ types:
   
   /deleteSchedule/{id}:
     delete:
-      
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Schedule deleted
+        400:
+          body:
+            
