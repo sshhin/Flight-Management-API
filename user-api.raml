@@ -77,3 +77,26 @@ types:
             application/json:
               example:
                 message: User not found.
+    patch:
+      queryParameters:
+        userType: 
+          required: false
+        userName:
+          required: false
+        userPassword: 
+          required: false
+        userPhone:
+          required: false
+        email:
+          required: false
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: User updated
+        400:
+          body:
+            application/json:
+              example:
+                message: User not found.
