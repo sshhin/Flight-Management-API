@@ -40,9 +40,9 @@ types:
           body:
             application/json:
               example:
-                  message: No booking found
+                message: No booking found
 
-  /modifyBooking:
+  /modifyBooking/{id}:
     put:
       body:
         application/json:
@@ -60,18 +60,17 @@ types:
               example:
                 message: No Booking found
 
-  /deleteBooking :
-    /{id} :
-      delete:
-        responses:
-          200:
-            body:
-              application/json:
-                example:
-                  message: Booking deleted
+  /deleteBooking/{id} :
+    delete:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Booking deleted
 
-          400:
-            body:
-              application/json:
-                example:
-                  message: Booking not found
+        400:
+          body:
+            application/json:
+              example:
+                message: Booking not found
