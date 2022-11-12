@@ -27,20 +27,19 @@ types:
               example:
                 message: Booking added.
 
-  /viewBooking:
-    /{id}:
-      get:
-        responses:
-          200:
-            body:
-              application/json:
-                type: Booking
-                example: !include Examples/BookingExample.raml
+  /viewBooking/{id}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Booking
+              example: !include Examples/BookingExample.raml
                   
-          400:
-            body:
-              application/json:
-                example:
+        400:
+          body:
+            application/json:
+              example:
                   message: No booking found
 
   /modifyBooking:
