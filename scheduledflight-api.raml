@@ -74,17 +74,17 @@ types :
                 example:
                   message : ScheduledFlight not found.
 
-    /showByAirport :
-      /{src}/{dsc}/{date} :
-        get:
-          responses:
-            200:
-              body:
-                application/json:
-                  type: ScheduledFlight[]
-                  example : !include /Examples/ScheduledFlightsGetAllExample.raml
-            400 :
-              body:
-                application/json:
-                  example:
-                    message : ScheduledFlight not found. 
+  /showByAirport :
+    /{src}/{dsc}/{date} :
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: ScheduledFlight[]
+                example : !include /Examples/ScheduledFlightsGetAllExample.raml
+          400 :
+            body:
+              application/json:
+                example:
+                  message : ScheduledFlight not found. 
