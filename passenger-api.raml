@@ -73,4 +73,14 @@ types:
               example:
                 message: Passenger not found
 
-/patchPassenger/{p}
+/patchPassenger/{pnrNumber}:
+  patch:
+    queryParameters:
+      passengerName:
+        required: false
+      passengerAge:
+        required: false
+      passengerUIN:
+        required: false
+      luggage:
+        required: false
