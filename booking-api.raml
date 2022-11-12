@@ -12,14 +12,14 @@ types:
           body:
             application/json:
               type : Booking[]
-              example:
+              example: !include Examples/BookingGetAllExample.raml
             
   /addBooking:
     post:
       body:
         application/json:
           type: Booking
-          example:
+          example: !include Examples/
       responses:
         201:
           body:
