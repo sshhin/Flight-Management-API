@@ -73,25 +73,25 @@ types:
               example:
                 message: Passenger not found
 
-/patchPassenger/{pnrNumber}:
-  patch:
-    queryParameters:
-      passengerName:
-        required: false
-      passengerAge:
-        required: false
-      passengerUIN:
-        required: false
-      luggage:
-        required: false
-    responses:
-      200:
-        body:
-          application/json:
-            example:
-              message: Passenger patched
-      400:
-        body:
-          application/json:
-            example:
-              messahe: Passenger not 
+  /patchPassenger/{pnrNumber}:
+    patch:
+      queryParameters:
+        passengerName:
+          required: false
+        passengerAge:
+          required: false
+        passengerUIN:
+          required: false
+        luggage:
+          required: false
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Passenger patched
+        400:
+          body:
+            application/json:
+              example:
+                message: Passenger not found
