@@ -63,7 +63,14 @@ types:
   /patchbooking/{id}:
     patch:
       queryParameters:
-        ticketCost
+        ticketCost: 
+          required: false
+      responses:
+        200:
+          body:
+            application/json:
+              
+        
 
 
   /deleteBooking/{id} :
