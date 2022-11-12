@@ -2,7 +2,7 @@
 title: scheduledflight-api
 
 types : 
-  ScheduledFlight : !include DataType/ScheduledFlightDataType.raml
+  ScheduledFlight : !include /Datatype/ScheduledFlightDataType.raml
 
 /scheduledflight :
   /showAllSchFlights :
@@ -13,6 +13,7 @@ types :
             application/json:
               type : ScheduledFlight[]
               example : !include /Examples/ScheduledFlightsGetAllExample.raml
+
   /addSchFlight :
     post:
       body:
@@ -26,22 +27,21 @@ types :
               example:
                 message: ScheduledFlight added.
   
-  /showByFno:
-    /{fno}:
-      get:
-        responses:
-          200:
-            body:
-              application/json:
-                type: ScheduledFlight
-                example : !include /Examples/ScheduledFlightExample.raml
-          400 :
-            body:
-              application/json:
-                example:
-                  message : Flight not found. 
+  /showByFno/{fno}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: ScheduledFlight
+              example : !include /Examples/ScheduledFlightExample.raml
+        400 :
+          body:
+            application/json:
+              example:
+                message : Flight not found. 
       
-  /modifySchFlight:
+  /modifySchFlight/{sfid}:
     put:
       body:
         application/json:
@@ -59,32 +59,48 @@ types :
               example:
                 message : ScheduledFlight not found.
 
-  /deleteSchFlight :
-    /{sfid} :
-      delete:
-        responses:
+  /deleteSchFlight/{sfid} :
+    delete:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message : ScheduledFlight deleted.
+        400 :
+          body:
+            application/json:
+              example:
+                message : ScheduledFlight not found.
+
+  /patchSchFlight/{sfid} :
+    patch:
+      queryParameters:
+        availableSeats :
+          required: false
+      responses:
           200:
             body:
               application/json:
                 example:
-                  message : ScheduledFlight deleted.
-          400 :
+                    message : ScheduledFlight Patched   
+          400:
             body:
               application/json:
                 example:
                   message : ScheduledFlight not found.
 
-  /showByAirport :
-    /{src}/{dsc}/{date} :
-      get:
-        responses:
-          200:
-            body:
-              application/json:
-                type: ScheduledFlight[]
-                example : !include /Examples/ScheduledFlightsGetAllExample.raml
-          400 :
-            body:
-              application/json:
-                example:
-                  message : ScheduledFlight not found. 
+
+  /showByAirport/{src}/{dsc}/{date} :
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: ScheduledFlight[]
+              example : !include /Examples/ScheduledFlightsGetAllExample.raml
+        400 :
+          body:
+            application/json:
+              example:
+                message : ScheduledFlight not found. 
