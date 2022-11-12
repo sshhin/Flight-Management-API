@@ -77,4 +77,16 @@ types:
     patch:
       queryParameters:
         arrivalTime:
-          
+          required: false
+        departureTime:
+          required: false
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Schedule patched
+        400:
+          body:
+            application/json:
+              
