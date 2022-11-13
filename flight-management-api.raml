@@ -106,7 +106,7 @@ types:
             body:
               application/json:
                 type: Airport[]
-                example: !include Examples/AirportExample.raml
+                example: !include Examples/AirportGetAllExample.raml
           400:
             body:
               application/json:
@@ -120,12 +120,12 @@ types:
             body:
               application/json:
                 type: Airport
-                example: !include Examples/AirportExample.raml
-        400:
-          body:
-            application/json:
-              example:
-                message: Airport not found
+                example: !include 
+          400:
+            body:
+              application/json:
+                example:
+                  message: Airport not found
 
   /schedule:
     /showAllSchedules:
