@@ -13,13 +13,13 @@ types:
 /api:
   /airport:
     /showAllAirports:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Airport[]
-              example: !include Examples/AirportGetAllExample.raml
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Airport[]
+                example: !include Examples/AirportGetAllExample.raml
 
     /addAirport:
       post:
@@ -66,35 +66,35 @@ types:
                 example:
                   message: Airport not found
 
-  /deleteAirport/{airportCode}:
-    delete:
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: Airport deleted
-        400:
-          body:
-            application/json:
-              example:
-                message: Airport not found
-
-  /patchAirport/{airportCode}:
-    patch:
-      queryParameters:
-        airportName:
-          required: false
-        airportLocation:
-          required: false
-      responses:
+    /deleteAirport/{airportCode}:
+      delete:
+        responses:
           200:
             body:
               application/json:
                 example:
-                  message: Airport patched
+                  message: Airport deleted
           400:
             body:
               application/json:
                 example:
                   message: Airport not found
+
+    /patchAirport/{airportCode}:
+      patch:
+        queryParameters:
+          airportName:
+            required: false
+          airportLocation:
+            required: false
+        responses:
+            200:
+              body:
+                application/json:
+                  example:
+                    message: Airport patched
+            400:
+              body:
+                application/json:
+                  example:
+                    message: Airport not found
