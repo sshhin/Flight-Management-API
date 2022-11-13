@@ -20,7 +20,7 @@ types:
           type: Flight
           example: !include /Examples/FlightPostExample.raml
 
-  /showByFno/{ID}:
+  /showByFno/{flightNumber}:
     get:
       responses:
         200:
@@ -34,7 +34,7 @@ types:
               example:
                 message : Flight not found.
 
-  /deleteByFno/{ID}:        
+  /deleteByFno/{flightNumber}:        
     delete:
       responses:
         200:
