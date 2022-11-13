@@ -83,14 +83,14 @@ types:
                 example:
                   message : Flight not found
 
-  /showByCarrierName/{airportLocation}:
+  /showByCarrierName/{carrierName}:
     get:
       responses:
         200:
           body:
             application/json:
-              type: Airport[]
-              example: !include Examples/AirportExample.raml
+              type: Flight[]
+              example: !include /Examples/FlightExample.raml
         400:
           body:
             application/json:
