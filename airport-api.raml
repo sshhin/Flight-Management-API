@@ -91,3 +91,11 @@ types:
               application/json:
                 example:
                   message: Airport not found
+
+  /showByLocation/{airportLocation}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: 
