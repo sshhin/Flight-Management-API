@@ -27,7 +27,7 @@ types:
               example:
                 message: Booking added
 
-  /showById/{id}:
+  /showById/{bookingId}:
     get:
       responses:
         200:
@@ -57,7 +57,7 @@ types:
               example:
                 message: Booking not found
 
-  /modifyBooking/{id}:
+  /modifyBooking/{bookingId}:
     put:
       body:
         application/json:
