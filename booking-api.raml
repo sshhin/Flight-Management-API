@@ -44,12 +44,15 @@ types:
 
   /modifyBooking/{id}:
     put:
+      body:
+        application/json:
+          type: Booking
+          example: !include Examples/BookingExample.raml
       responses:
         200:
           body:
             application/json:
-              type: Booking
-              example: !include Examples/BookingExample.raml
+              example: Book
         400:
           body:
             application/json:
