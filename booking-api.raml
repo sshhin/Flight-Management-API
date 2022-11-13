@@ -75,7 +75,7 @@ types:
               example:
                 message: Booking not found
 
-  /patchbooking/{id}:
+  /patchbooking/{bookingId}:
     patch:
       queryParameters:
         noOfPassengers: 
@@ -92,7 +92,7 @@ types:
               example:
                 message: Booking not found
       
-  /deleteBooking/{id} :
+  /deleteBooking/{bookingId} :
     delete:
       responses:
         200:
