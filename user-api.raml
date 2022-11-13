@@ -48,7 +48,7 @@ types:
               example:
                 message: User not found
   
-  /deleteUser/{ID}:
+  /deleteUser/{userId}:
     delete:
       responses:
         200:
@@ -62,7 +62,7 @@ types:
               example:
                 message: User not found
 
-  /modifyUser/{ID}:               
+  /modifyUser/{userId}:               
     put:
       body:
         application/json:
@@ -81,7 +81,7 @@ types:
               example:
                 message: User not found
   
-  /patchUser/{ID}:
+  /patchUser/{userId}:
     patch:
       queryParameters:
         userType: 
