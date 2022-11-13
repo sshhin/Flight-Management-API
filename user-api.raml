@@ -41,14 +41,14 @@ types:
           body:
             application/json:
               type: User
-              example: !include Examples/UserExample.raml
-            
-                
+              example: !include Examples/UserExample.raml        
         400:
           body:
             application/json:
               example:
-                message: Account not found.
+                message: User not found
+  
+  /deleteUser/{ID}:
     delete:
       responses:
         200:
