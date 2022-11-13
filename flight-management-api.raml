@@ -518,7 +518,14 @@ types:
                 example:
                   message: Booking not found
 
-    /showBySfid/{id}
+    /showBySfid/{id}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Booking
+                example
 
     /modifyBooking/{id}:
       put:
