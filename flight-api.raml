@@ -12,6 +12,7 @@ types:
             application/json:
               type: Flight[]
               example: !include /Examples/FlightGetAllExample.raml
+
   /addFlight:            
     post:
       body:
@@ -64,4 +65,6 @@ types:
             application/json:
               example:
                 message : Flight not found
+
+  /patchFlight/{F}
               
