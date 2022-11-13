@@ -92,7 +92,7 @@ types:
               example:
                 message: Schedule not found
 
-  /showBySource/{srcName}:
+  /showBySource/{airportName}:
     get:
       responses:
         200:
@@ -106,7 +106,21 @@ types:
               example:
                 message: Schedule not found
 
-  /showByDe/{srcName}:
+  /showByDestination/{airportName}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Schedule
+              example: !include Examples/ScheduleExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: Schedule not found
+              
+  /showByArrival/{arrivalTime}:
     get:
       responses:
         200:
