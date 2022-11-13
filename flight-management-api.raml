@@ -337,46 +337,45 @@ types:
                 example:
                   message: User not found
 
-  /modifyUser/{ID}:               
-    put:
-      body:
-        application/json:
-          type: User
-          example: !include Examples/UserExample.raml
-            
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: User updated
-        400:
-          body:
-            application/json:
-              example:
-                message: User not found
+    /modifyUser/{ID}:               
+      put:
+        body:
+          application/json:
+            type: User
+            example: !include Examples/UserExample.raml
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: User updated
+          400:
+            body:
+              application/json:
+                example:
+                  message: User not found
   
-  /patchUser/{ID}:
-    patch:
-      queryParameters:
-        userType: 
-          required: false
-        userName:
-          required: false
-        userPassword: 
-          required: false
-        userPhone:
-          required: false
-        email:
-          required: false
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: User updated
-        400:
-          body:
-            application/json:
-              example:
-                message: User not found
+    /patchUser/{ID}:
+      patch:
+        queryParameters:
+          userType: 
+            required: false
+          userName:
+            required: false
+          userPassword: 
+            required: false
+          userPhone:
+            required: false
+          email:
+            required: false
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: User updated
+          400:
+            body:
+              application/json:
+                example:
+                  message: User not found
