@@ -103,14 +103,14 @@ types:
           body:
             application/json:
               type: Passenger[]
-              example: !include Examples/PassengerExample.raml
+              example: !include Examples/PassengerGetAllExample.raml
         400:
           body:
             application/json:
               example:
                 message: Passenger not found
   
-  /showByUI/{passengerName}:
+  /showByUIN/{passengerUIN}:
     get:
       responses:
         200:
