@@ -803,16 +803,16 @@ types:
                   example:
                     message : Flight not found
 
-  /showByCarrierName/{carrierName}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Flight[]
-              example: !include /Examples/FlightExample.raml
-        400:
-          body:
-            application/json:
-              example:
-                message: Carrier Name not found             
+    /showByCarrierName/{carrierName}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Flight[]
+                example: !include /Examples/FlightExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: Carrier Name not found             
