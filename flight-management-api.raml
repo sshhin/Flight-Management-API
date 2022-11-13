@@ -786,22 +786,22 @@ types:
                 example:
                   message : Flight not found
 
-  /patchFlight/{Fno}:
-    patch:
-      queryParameters:
-        seatCapacity :
-          required: false
-      responses:
-          200:
-            body:
-              application/json:
-                example:
+    /patchFlight/{Fno}:
+      patch:
+        queryParameters:
+          seatCapacity :
+            required: false
+        responses:
+            200:
+              body:
+                application/json:
+                  example:
                     message : Flight patched   
-          400:
-            body:
-              application/json:
-                example:
-                  message : Flight not found
+            400:
+              body:
+                application/json:
+                  example:
+                    message : Flight not found
 
   /showByCarrierName/{carrierName}:
     get:
