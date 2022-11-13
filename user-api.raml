@@ -4,23 +4,22 @@ types:
   User: !include DataType/UserDataType.raml
 
 /User:
-  
-  get:
-    description: User details
-    queryParameters:
-      type:
-        required: false
-        enum:
-          - Admin
-          - User
-    responses:
-      200:
-        body:
-          application/json:
-            type: User[]
-            example: !include Examples/UserGetAllExample.raml
+  /showAll:
+    get:
+      description: User details
+      queryParameters:
+        type:
+          required: false
+          enum:
+            - Admin
+            - User
+      responses:
+        200:
+          body:
+            application/json:
+              type: User[]
+              example: !include Examples/UserGetAllExample.raml
               
-
   post:
     body:
       application/json:
