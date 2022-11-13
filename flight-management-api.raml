@@ -525,7 +525,14 @@ types:
             body:
               application/json:
                 type: Booking
-                example
+                example: !include Examples/BookingExample.raml
+
+          400:
+            body:
+              application/json:
+                example:
+                  
+                  
 
     /modifyBooking/{id}:
       put:
