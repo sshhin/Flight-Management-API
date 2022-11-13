@@ -32,8 +32,9 @@ types:
           body:
             application/json:
               example:
-                message: User created
-  /{ID}:
+                message: User added
+
+  /showById/{ID}:
     get:
       responses:
         200:
