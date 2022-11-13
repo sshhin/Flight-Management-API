@@ -5,7 +5,7 @@ types:
 
 
 /booking:
-  /viewbooking:
+  /showAllBookings:
     get:
       responses:
         200:
@@ -27,7 +27,7 @@ types:
               example:
                 message: Booking added.
 
-  /viewBooking/{id}:
+  /showById/{id}:
     get:
       responses:
         200:
