@@ -42,14 +42,14 @@ types:
               example:
                 message: Booking not found
 
-  /showBySfid/{id}:
+  /showBySfid/{sfid}:
     get:
       responses:
         200:
           body:
             application/json:
-              type: Booking
-              example: !include Examples/BookingExample.raml
+              type: Booking[]
+              example: !include Examples/BookingGetAllExample.raml
 
         400:
           body:
