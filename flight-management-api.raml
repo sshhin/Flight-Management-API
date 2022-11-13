@@ -278,3 +278,105 @@ types:
               application/json:
                 example:
                   message: Passenger not found
+
+  /User:
+    /showAllUsers:
+      get:
+        description: User details
+        queryParameters:
+          type:
+            required: false
+            enum:
+              - Admin
+              - User
+        responses:
+          200:
+            body:
+              application/json:
+                type: User[]
+                example: !include Examples/UserGetAllExample.raml
+
+    /addUser:            
+      post:
+        body:
+          application/json:
+            type: User
+            example:  !include Examples/UserPostExample.raml
+        responses:
+          201:
+            body:
+              application/json:
+                example:
+                  message: User added
+
+    /showById/{ID}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: User
+              example: !include Examples/UserExample.raml        
+        400:
+          body:
+            application/json:
+              example:
+                message: User not found
+  
+  /deleteUser/{ID}:
+    delete:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: User deleted 
+        400:
+          body:
+            application/json:
+              example:
+                message: User not found
+
+  /modifyUser/{ID}:               
+    put:
+      body:
+        application/json:
+          type: User
+          example: !include Examples/UserExample.raml
+            
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: User updated
+        400:
+          body:
+            application/json:
+              example:
+                message: User not found
+  
+  /patchUser/{ID}:
+    patch:
+      queryParameters:
+        userType: 
+          required: false
+        userName:
+          required: false
+        userPassword: 
+          required: false
+        userPhone:
+          required: false
+        email:
+          required: false
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: User updated
+        400:
+          body:
+            application/json:
+              example:
+                message: User not found
