@@ -525,41 +525,41 @@ types:
             type: Booking
             example:
         responses:
-        200:
-          body:
-            application/json:
-              type: Booking
-              example: !include Examples/BookingExample.raml
-        400:
-          body:
-            application/json:
-              example:
-                message: Booking not found
+          200:
+            body:
+              application/json:
+                type: Booking
+                example: !include Examples/BookingExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: Booking not found
 
-  /patchbooking/{id}:
-    patch:
-      queryParameters:
-        ticketCost: 
-          required: false
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: Booking patched
-        400:
-          body:
-            application/json:
-              example:
-                message: Booking not found
+    /patchbooking/{id}:
+      patch:
+        queryParameters:
+          ticketCost: 
+            required: false
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: Booking patched
+          400:
+            body:
+              application/json:
+                example:
+                  message: Booking not found
       
-  /deleteBooking/{id} :
-    delete:
-      responses:
-        200:
-          body:
-            application/json:
-              example:
+    /deleteBooking/{id} :
+      delete:
+        responses:
+          200:
+            body:
+              application/json:
+                example:
                 message: Booking deleted
 
         400:
