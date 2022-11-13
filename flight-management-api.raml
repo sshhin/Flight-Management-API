@@ -403,42 +403,42 @@ types:
                 example:
                   message: ScheduledFlight added.
   
-  /showByFno/{fno}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: ScheduledFlight
-              example : !include /Examples/ScheduledFlightExample.raml
-        400 :
-          body:
-            application/json:
-              example:
-                message : Flight not found. 
+    /showByFno/{fno}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: ScheduledFlight
+                example : !include /Examples/ScheduledFlightExample.raml
+          400 :
+            body:
+              application/json:
+                example:
+                  message : ScheduledFlight not found. 
       
-  /modifySchFlight/{sfid}:
-    put:
-      body:
-        application/json:
-          type: ScheduledFlight
-          example: !include /Examples/ScheduledFlightExample.raml
-      responses:
-        200:
-          body:
-            application/json:
-              example : 
-                message : ScheduledFlight modified.
-        400 :
-          body:
-            application/json:
-              example:
-                message : ScheduledFlight not found.
+    /modifySchFlight/{sfid}:
+      put:
+        body:
+          application/json:
+            type: ScheduledFlight
+            example: !include /Examples/ScheduledFlightExample.raml
+        responses:
+          200:
+            body:
+              application/json:
+                example : 
+                  message : ScheduledFlight modified.
+          400 :
+            body:
+              application/json:
+                example:
+                  message : ScheduledFlight not found.
 
-  /deleteSchFlight/{sfid} :
-    delete:
-      responses:
-        200:
+    /deleteSchFlight/{sfid} :
+      delete:
+        responses:
+          200:
           body:
             application/json:
               example:
