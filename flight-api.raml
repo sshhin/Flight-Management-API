@@ -30,13 +30,13 @@ types:
         200:
           body:
            application/json:
-            example:
+            example: 
               message: Flight deleted
     put:
       body:
         application/json:
           type: Flight
-          example:
+          example: !include /Examples/FlightExample.raml
       responses:
         200:
           body:
