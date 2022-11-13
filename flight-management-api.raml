@@ -21,25 +21,25 @@ types:
               type: Airport[]
               example: !include Examples/AirportGetAllExample.raml
 
-  /addAirport:
-    post:
-      body:
-        application/json:
-          type: Airport
-          example: !include Examples/AirportPostExample.raml
-      responses:
-        201:
-          body:
-            application/json:
-              example:
-                message: Airport added
+    /addAirport:
+      post:
+        body:
+          application/json:
+            type: Airport
+            example: !include Examples/AirportPostExample.raml
+        responses:
+          201:
+            body:
+              application/json:
+                example:
+                  message: Airport added
   
-  /showById/{airportCode}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
+    /showById/{airportCode}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
               type: Airport
               example: !include Examples/AirportExample.raml
         400:
