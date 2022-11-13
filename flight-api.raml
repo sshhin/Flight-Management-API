@@ -67,5 +67,19 @@ types:
                 message : Flight not found
 
   /patchFlight/{Fno}:
-    
+    patch:
+      queryParameters:
+        availableSeats :
+          required: false
+      responses:
+          200:
+            body:
+              application/json:
+                example:
+                    message : Flight patched   
+          400:
+            body:
+              application/json:
+                example:
+                  message : ScheduledFlight not found
               
