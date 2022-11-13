@@ -310,32 +310,32 @@ types:
                   message: User added
 
     /showById/{ID}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: User
-              example: !include Examples/UserExample.raml        
-        400:
-          body:
-            application/json:
-              example:
-                message: User not found
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: User
+                example: !include Examples/UserExample.raml        
+          400:
+            body:
+              application/json:
+                example:
+                  message: User not found
   
-  /deleteUser/{ID}:
-    delete:
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: User deleted 
-        400:
-          body:
-            application/json:
-              example:
-                message: User not found
+    /deleteUser/{ID}:
+      delete:
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: User deleted 
+          400:
+            body:
+              application/json:
+                example:
+                  message: User not found
 
   /modifyUser/{ID}:               
     put:
