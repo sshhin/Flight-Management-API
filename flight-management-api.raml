@@ -99,6 +99,34 @@ types:
                   example:
                     message: Airport not found
 
+    /showByLocation/{airportLocation}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Airport[]
+                example: !include Examples/AirportExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: Airport not found
+                
+    /showByName/{airportName}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Airport
+                example: !include Examples/AirportExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: Airport not found
+
   /schedule:
     /showAllSchedules:
       get:
