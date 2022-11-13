@@ -740,46 +740,46 @@ types:
             type: Flight
             example: !include /Examples/FlightPostExample.raml
 
-  /showByFno/{ID}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Flight
-              example : !include /Examples/FlightExample.raml
-        400 :
-          body:
-            application/json:
-              example:
-                message : Flight not found
+    /showByFno/{ID}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Flight
+                example : !include /Examples/FlightExample.raml
+          400 :
+            body:
+              application/json:
+                example:
+                  message : Flight not found
 
-  /deleteByFno/{ID}:        
-    delete:
-      responses:
-        200:
-          body:
-            application/json:
-              example: 
-                message: Flight deleted
-        400 :
-          body:
-            application/json:
-              example:
-                message : Flight not found
+    /deleteByFno/{ID}:        
+      delete:
+        responses:
+          200:
+            body:
+              application/json:
+                example: 
+                  message: Flight deleted
+          400 :
+            body:
+              application/json:
+                example:
+                  message : Flight not found
   
-  /modifyFlight/{Fno}:
-    put:
-      body:
-        application/json:
-          type: Flight
-          example: !include /Examples/FlightExample.raml
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: Flight updated 
+    /modifyFlight/{Fno}:
+      put:
+        body:
+          application/json:
+            type: Flight
+            example: !include /Examples/FlightExample.raml
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: Flight updated 
         400 :
           body:
             application/json:
