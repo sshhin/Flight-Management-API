@@ -133,3 +133,17 @@ types:
             application/json:
               example:
                 message: Schedule not found
+  
+  /showByDeparture/{departureTime}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Schedule[]
+              example: !include Examples/ScheduleGetAllExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: Schedule not found
