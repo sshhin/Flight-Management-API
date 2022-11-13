@@ -523,13 +523,14 @@ types:
         body:
           application/json:
             type: Booking
-            example:
+            example: !include Examples/BookingExample.raml
         responses:
           200:
             body:
               application/json:
                 type: Booking
-                example: !include Examples/BookingExample.raml
+                example: 
+                  message: Booking modified
           400:
             body:
               application/json:
