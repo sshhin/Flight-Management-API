@@ -105,3 +105,30 @@ types:
             application/json:
               example:
                 message: User not found
+  /{UserName}:
+    get:
+     responses:
+        200:
+          body:
+            application/json:
+              example:
+                !include example/UserExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: User not Found.
+  /{email}:
+    get:
+     responses:
+        200:
+          body:
+            application/json:
+              example:
+                !include example/UserExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: User not Found.
+              
