@@ -492,6 +492,33 @@ types:
                 example:
                   message: User not found
 
+    /showByName/{userName}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: User
+                example: !include Examples/UserExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: User not found
+
+    /showByEmail/{email}:
+      get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: User
+              example: !include Examples/UserExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: User not found
   /scheduledflight :
     /showAllSchFlights :
       get:
