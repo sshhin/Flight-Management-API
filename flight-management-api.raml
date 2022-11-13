@@ -216,61 +216,61 @@ types:
                   message: Schedule not found
 
     /showBySource/{airportName}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Schedule[]
-              example: !include Examples/ScheduleGetAllExample.raml
-        400:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Schedule[]
+                example: !include Examples/ScheduleGetAllExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: Schedule not found
+
+    /showByDestination/{airportName}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Schedule[]
+                example: !include Examples/ScheduleGetAllExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: Schedule not found
+              
+    /showByArrival/{arrivalTime}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Schedule[]
+                example: !include Examples/ScheduleGetAllExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: Schedule not found
+  
+    /showByDeparture/{departureTime}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Schedule[]
+                example: !include Examples/ScheduleGetAllExample.raml
+          400:
           body:
             application/json:
               example:
                 message: Schedule not found
 
-  /showByDestination/{airportName}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Schedule[]
-              example: !include Examples/ScheduleGetAllExample.raml
-        400:
-          body:
-            application/json:
-              example:
-                message: Schedule not found
-              
-  /showByArrival/{arrivalTime}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Schedule[]
-              example: !include Examples/ScheduleGetAllExample.raml
-        400:
-          body:
-            application/json:
-              example:
-                message: Schedule not found
-  
-  /showByDeparture/{departureTime}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Schedule[]
-              example: !include Examples/ScheduleGetAllExample.raml
-        400:
-          body:
-            application/json:
-              example:
-                message: Schedule not found
-                
   /passenger:
     /showAllPassengers:
       get:
