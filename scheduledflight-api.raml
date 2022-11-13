@@ -25,7 +25,7 @@ types :
           body:
             application/json:
               example:
-                message: ScheduledFlight added.
+                message: ScheduledFlight added
   
   /showByFno/{fno}:
     get:
@@ -39,7 +39,7 @@ types :
           body:
             application/json:
               example:
-                message : Flight not found. 
+                message : ScheduledFlight not found
       
   /modifySchFlight/{sfid}:
     put:
@@ -52,12 +52,12 @@ types :
           body:
             application/json:
               example : 
-                message : ScheduledFlight modified.
+                message : ScheduledFlight updated
         400 :
           body:
             application/json:
               example:
-                message : ScheduledFlight not found.
+                message : ScheduledFlight not found
 
   /deleteSchFlight/{sfid} :
     delete:
@@ -66,12 +66,12 @@ types :
           body:
             application/json:
               example:
-                message : ScheduledFlight deleted.
+                message : ScheduledFlight deleted
         400 :
           body:
             application/json:
               example:
-                message : ScheduledFlight not found.
+                message : ScheduledFlight not found
 
   /patchSchFlight/{sfid} :
     patch:
@@ -83,12 +83,12 @@ types :
             body:
               application/json:
                 example:
-                    message : ScheduledFlight Patched   
+                    message : ScheduledFlight patched   
           400:
             body:
               application/json:
                 example:
-                  message : ScheduledFlight not found.
+                  message : ScheduledFlight not found
 
   /showByAirport/{src}/{dsc}/{date} :
     get:
@@ -102,4 +102,4 @@ types :
           body:
             application/json:
               example:
-                message : ScheduledFlight not found. 
+                message : ScheduledFlight not found
