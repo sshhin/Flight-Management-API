@@ -481,50 +481,50 @@ types:
                   message : ScheduledFlight not found.
 
   /booking:
-  /showAllBookings:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type : Booking[]
-              example: !include Examples/BookingGetAllExample.raml
+    /showAllBookings:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type : Booking[]
+                example: !include Examples/BookingGetAllExample.raml
             
-  /addBooking:
-    post:
-      body:
-        application/json:
-          type: Booking
-          example: !include Examples/BookingPostExample.raml
-      responses:
-        201:
-          body:
-            application/json:
-              example:
-                message: Booking added.
+    /addBooking:
+      post:
+        body:
+          application/json:
+            type: Booking
+            example: !include Examples/BookingPostExample.raml
+        responses:
+          201:
+            body:
+              application/json:
+                example:
+                  message: Booking added.
 
-  /showById/{id}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Booking
-              example: !include Examples/BookingExample.raml
+    /showById/{id}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Booking
+                example: !include Examples/BookingExample.raml
                   
-        400:
-          body:
-            application/json:
-              example:
-                message: Booking not found
+          400:
+            body:
+              application/json:
+                example:
+                  message: Booking not found
 
-  /modifyBooking/{id}:
-    put:
-      body:
-        application/json:
-          type: Booking
-          example:
-      responses:
+    /modifyBooking/{id}:
+      put:
+        body:
+          application/json:
+            type: Booking
+            example:
+        responses:
         200:
           body:
             application/json:
