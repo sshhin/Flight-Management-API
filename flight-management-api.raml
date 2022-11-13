@@ -186,3 +186,95 @@ types:
               application/json:
                 example:
                   message: Schedule not found
+
+  /passenger:
+  /showAllPassengers:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Passenger[]
+              example: !include Examples/PassengerGetAllExample.raml
+
+  /addPassenger:
+    post:
+      body:
+        application/json:
+          type: Passenger
+          example: !include Examples/PassengerPostExample.raml
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                message: Passenger added
+  
+  /showById/{pnrNumber}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Passenger
+              example: !include Examples/PassengerExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: Passenger not found
+  
+  /modifyPassenger/{pnrNumber}:
+    put:
+      body:
+        application/json:
+          type: Passenger
+          example: !include Examples/PassengerExample.raml
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Passenger updated
+        400:
+          body:
+            application/json:
+              example:
+                message: Passenger not found
+  
+  /deletePassenger/{pnrNumber}:
+    delete:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Passenger deleted
+        400:
+          body:
+            application/json:
+              example:
+                message: Passenger not found
+
+  /patchPassenger/{pnrNumber}:
+    patch:
+      queryParameters:
+        passengerName:
+          required: false
+        passengerAge:
+          required: false
+        passengerUIN:
+          required: false
+        luggage:
+          required: false
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+                message: Passenger patched
+        400:
+          body:
+            application/json:
+              example:
+                message: Passenger not found
