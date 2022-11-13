@@ -92,4 +92,30 @@ types:
               example:
                 message: Schedule not found
 
-  /showBySource/{src}
+  /showBySource/{srcName}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Schedule
+              example: !include Examples/ScheduleExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: Schedule not found
+
+  /showByDe/{srcName}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Schedule
+              example: !include Examples/ScheduleExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: Schedule not found
