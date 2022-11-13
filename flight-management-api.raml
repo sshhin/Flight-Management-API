@@ -439,43 +439,43 @@ types:
       delete:
         responses:
           200:
-          body:
-            application/json:
-              example:
-                message : ScheduledFlight deleted.
-        400 :
-          body:
-            application/json:
-              example:
-                message : ScheduledFlight not found.
-
-  /patchSchFlight/{sfid} :
-    patch:
-      queryParameters:
-        availableSeats :
-          required: false
-      responses:
-          200:
             body:
               application/json:
                 example:
-                    message : ScheduledFlight Patched   
-          400:
+                  message : ScheduledFlight deleted.
+          400 :
             body:
               application/json:
                 example:
                   message : ScheduledFlight not found.
 
-  /showByAirport/{src}/{dsc}/{date} :
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: ScheduledFlight[]
-              example : !include /Examples/ScheduledFlightsGetAllExample.raml
-        400 :
-          body:
-            application/json:
-              example:
-                message : ScheduledFlight not found. 
+    /patchSchFlight/{sfid} :
+      patch:
+        queryParameters:
+          availableSeats :
+            required: false
+        responses:
+            200:
+              body:
+                application/json:
+                  example:
+                    message : ScheduledFlight Patched   
+            400:
+              body:
+                application/json:
+                  example:
+                    message : ScheduledFlight not found.
+
+    /showByAirport/{src}/{dsc}/{date} :
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: ScheduledFlight[]
+                example : !include /Examples/ScheduledFlightsGetAllExample.raml
+          400 :
+            body:
+              application/json:
+                example:
+                  message : ScheduledFlight not found. 
