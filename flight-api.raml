@@ -23,12 +23,12 @@ types:
     get:
       responses:
         200:
-            body:
-              application/json:
-                type: Flight
-                example : !include /Examples/FlightExample.raml
+          body:
+            application/json:
+              type: Flight
+              example : !include /Examples/FlightExample.raml
 
-    /deleteByFno:        
+  /deleteByFno:        
       delete:
        responses:
         200:
