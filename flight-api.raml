@@ -27,7 +27,11 @@ types:
             application/json:
               type: Flight
               example : !include /Examples/FlightExample.raml
-          
+        400 :
+          body:
+            application/json:
+              example:
+                message : Flight not found
 
   /deleteByFno/{ID}:        
     delete:
@@ -37,6 +41,11 @@ types:
             application/json:
               example: 
                 message: Flight deleted
+        400 :
+          body:
+            application/json:
+              example:
+                message : Flight not found
   
   /modifyFlight/{Fno}:
     put:
@@ -50,4 +59,9 @@ types:
             application/json:
               example:
                 message: Flight updated 
+        400 :
+          body:
+            application/json:
+              example:
+                message : Flight not found
               
