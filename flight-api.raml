@@ -19,14 +19,14 @@ types:
           type: Flight
           example: !include /Examples/FlightPostExample.raml
 
-  /showByID:          
-  /{ID}:
-    get:
-     responses:
-      200:
-        body:
-          application/json:
-            type: Flight
+  /showByFno:          
+    /{ID}:
+      get:
+        responses:
+        200:
+          body:
+            application/json:
+              type: Flight
             example : !include /Examples/FlightExample.raml
             
     delete:
