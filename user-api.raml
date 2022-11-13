@@ -60,7 +60,7 @@ types:
           body:
             application/json:
               example:
-                message: User not founded 
+                message: User not found 
     put:
       body:
         application/json:
@@ -72,12 +72,12 @@ types:
           body:
             application/json:
               example:
-                message: User updated.
+                message: User updated
         400:
           body:
             application/json:
               example:
-                message: User not found.
+                message: User not found
     patch:
       queryParameters:
         userType: 
@@ -100,4 +100,4 @@ types:
           body:
             application/json:
               example:
-                message: User not found.
+                message: User not found
