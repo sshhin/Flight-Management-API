@@ -122,56 +122,56 @@ types:
                 example:
                   message: Schedule added
   
-  /showById/{scheduleId}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Schedule
-              example: !include Examples/ScheduleExample.raml
-        400:
-          body:
-            application/json:
-              example:
-                message: Schedule not found
+    /showById/{scheduleId}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Schedule
+                example: !include Examples/ScheduleExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: Schedule not found
   
-  /modifySchedule/{scheduleId}:
-    put:
-      body:
-        application/json:
-          type: Schedule
-          example: !include Examples/ScheduleExample.raml
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: Schedule updated
-        400:
-          body:
-            application/json:
-              example:
-                message: Schedule not found
+    /modifySchedule/{scheduleId}:
+      put:
+        body:
+          application/json:
+            type: Schedule
+            example: !include Examples/ScheduleExample.raml
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: Schedule updated
+          400:
+            body:
+              application/json:
+                example:
+                  message: Schedule not found
   
-  /deleteSchedule/{scheduleId}:
-    delete:
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: Schedule deleted
-        400:
-          body:
-            application/json:
-              example:
-                message: Schedule not found
+    /deleteSchedule/{scheduleId}:
+      delete:
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: Schedule deleted
+          400:
+            body:
+              application/json:
+                example:
+                  message: Schedule not found
 
-  /patchSchedule/{scheduleId}:
-    patch:
-      queryParameters:
-        arrivalTime:
+    /patchSchedule/{scheduleId}:
+      patch:
+        queryParameters:
+          arrivalTime:
           required: false
         departureTime:
           required: false
