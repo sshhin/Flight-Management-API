@@ -19,19 +19,20 @@ types:
             application/json:
               type: User[]
               example: !include Examples/UserGetAllExample.raml
-              
-  post:
-    body:
-      application/json:
-        type: User
-        example:  !include Examples/UserPostExample.raml
+
+  /addUser:            
+    post:
+      body:
+        application/json:
+          type: User
+          example:  !include Examples/UserPostExample.raml
          
-    responses:
-      201:
-        body:
-          application/json:
-            example:
-              message: User created
+      responses:
+        201:
+          body:
+            application/json:
+              example:
+                message: User created
   /{ID}:
     get:
       responses:
