@@ -112,11 +112,10 @@ types:
         200:
           body:
             application/json:
-              type: Airport[]
+              type: Airport
               example: !include Examples/AirportExample.raml
         400:
           body:
             application/json:
               example:
                 message: Airport not found
-                
