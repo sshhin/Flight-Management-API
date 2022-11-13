@@ -61,8 +61,8 @@ types:
             application/json:
               example:
                 message: User not found
-                
-                 
+
+  /modifyUser/{ID}:               
     put:
       body:
         application/json:
@@ -80,6 +80,8 @@ types:
             application/json:
               example:
                 message: User not found
+  
+  /patchUser/{ID}:
     patch:
       queryParameters:
         userType: 
