@@ -48,23 +48,23 @@ types:
                 example:
                   message: Airport not found
 
-  /modifyAirport/{airportCode}:
-    put:
-      body:
-        application/json:
-          type: Airport
-          example: !include Examples/AirportExample.raml
-      responses:
-        200:
-          body:
-            application/json:
-              example:
-                message: Airport updated
-        400:
-          body:
-            application/json:
-              example:
-                message: Airport not found
+    /modifyAirport/{airportCode}:
+      put:
+        body:
+          application/json:
+            type: Airport
+            example: !include Examples/AirportExample.raml
+        responses:
+          200:
+            body:
+              application/json:
+                example:
+                  message: Airport updated
+          400:
+            body:
+              application/json:
+                example:
+                  message: Airport not found
 
   /deleteAirport/{airportCode}:
     delete:
