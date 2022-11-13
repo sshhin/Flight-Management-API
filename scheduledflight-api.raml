@@ -27,7 +27,7 @@ types :
               example:
                 message: ScheduledFlight added
   
-  /showByFno/{fno}:
+  /showByFno/{flightNumber}:
     get:
       responses:
         200:
@@ -90,7 +90,7 @@ types :
                 example:
                   message : ScheduledFlight not found
 
-  /showByAirport/{src}/{dsc}/{date} :
+  /showByAirport/{airportLocat}/{dsc}/{date} :
     get:
       responses:
         200:
