@@ -739,6 +739,12 @@ types:
           application/json:
             type: Flight
             example: !include /Examples/FlightPostExample.raml
+        responses:
+          201:
+            body:
+              application/json:
+                example:
+                  message: Flight added
 
     /showByFno/{flightNumber}:
       get:
