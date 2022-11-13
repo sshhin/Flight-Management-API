@@ -12,15 +12,14 @@ types:
             application/json:
               type: Flight[]
               example: !include /Examples/FlightGetAllExample.raml
-  /            
-  post:
-    body:
-      application/json:
-        type: Flight
-        example: !include /Examples/FlightPostExample.raml
-          
-  
-            
+  /addFlight:            
+    post:
+      body:
+        application/json:
+          type: Flight
+          example: !include /Examples/FlightPostExample.raml
+
+  /showByID:          
   /{ID}:
     get:
      responses:
