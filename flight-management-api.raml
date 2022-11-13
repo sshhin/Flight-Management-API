@@ -188,51 +188,51 @@ types:
                   message: Schedule not found
 
   /passenger:
-  /showAllPassengers:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Passenger[]
-              example: !include Examples/PassengerGetAllExample.raml
+    /showAllPassengers:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Passenger[]
+                example: !include Examples/PassengerGetAllExample.raml
 
-  /addPassenger:
-    post:
-      body:
-        application/json:
-          type: Passenger
-          example: !include Examples/PassengerPostExample.raml
-      responses:
-        201:
-          body:
-            application/json:
-              example:
-                message: Passenger added
+    /addPassenger:
+      post:
+        body:
+          application/json:
+            type: Passenger
+            example: !include Examples/PassengerPostExample.raml
+        responses:
+          201:
+            body:
+              application/json:
+                example:
+                  message: Passenger added
   
-  /showById/{pnrNumber}:
-    get:
-      responses:
-        200:
-          body:
-            application/json:
-              type: Passenger
-              example: !include Examples/PassengerExample.raml
-        400:
-          body:
-            application/json:
-              example:
-                message: Passenger not found
+    /showById/{pnrNumber}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Passenger
+                example: !include Examples/PassengerExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: Passenger not found
   
-  /modifyPassenger/{pnrNumber}:
-    put:
-      body:
-        application/json:
-          type: Passenger
-          example: !include Examples/PassengerExample.raml
-      responses:
-        200:
-          body:
+    /modifyPassenger/{pnrNumber}:
+      put:
+        body:
+          application/json:
+            type: Passenger
+            example: !include Examples/PassengerExample.raml
+        responses:
+          200:
+            body:
             application/json:
               example:
                 message: Passenger updated
