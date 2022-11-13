@@ -28,14 +28,14 @@ types:
               type: Flight
               example : !include /Examples/FlightExample.raml
 
-  /deleteByFno:        
-      delete:
-       responses:
-        200:
-          body:
-           application/json:
+  /deleteByFno/{ID}:        
+    delete:
+      responses:
+      200:
+        body:
+          application/json:
             example: 
-              message: Flight deleted
+            message: Flight deleted
     put:
       body:
         application/json:
