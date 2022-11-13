@@ -602,13 +602,13 @@ types:
                 example:
                   message: Booking not found
 
-    /showBySfid/{id}:
+    /showBySfid/{sfid}:
       get:
         responses:
           200:
             body:
               application/json:
-                type: Booking
+                type: Booking[]
                 example: !include Examples/BookingExample.raml
 
           400:
