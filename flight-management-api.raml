@@ -435,7 +435,7 @@ types:
                 example:
                   message: User not found
   
-    /deleteUser/{Iud}:
+    /deleteUser/{userId}:
       delete:
         responses:
           200:
@@ -449,7 +449,7 @@ types:
                 example:
                   message: User not found
 
-    /modifyUser/{ID}:               
+    /modifyUser/{userId}:               
       put:
         body:
           application/json:
@@ -467,7 +467,7 @@ types:
                 example:
                   message: User not found
   
-    /patchUser/{ID}:
+    /patchUser/{userId}:
       patch:
         queryParameters:
           userType: 
@@ -543,7 +543,7 @@ types:
                 example:
                   message: ScheduledFlight added
   
-    /showByFno/{fno}:
+    /showByFno/{flightNumber}:
       get:
         responses:
           200:
@@ -643,7 +643,7 @@ types:
                 example:
                   message: Booking added
 
-    /showById/{id}:
+    /showById/{bookingId}:
       get:
         responses:
           200:
@@ -674,7 +674,7 @@ types:
                   message: Booking not found
                   
 
-    /modifyBooking/{id}:
+    /modifyBooking/{bookingId}:
       put:
         body:
           application/json:
@@ -692,7 +692,7 @@ types:
                 example:
                   message: Booking not found
 
-    /patchbooking/{id}:
+    /patchbooking/{bookingId}:
       patch:
         queryParameters:
           noOfPassengers: 
