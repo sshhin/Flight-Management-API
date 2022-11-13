@@ -14,7 +14,7 @@ types:
               example: !include /Examples/FlightGetAllExample.raml
 
   /addFlight:            
-    post:
+    post: 
       body:
         application/json:
           type: Flight
@@ -32,7 +32,7 @@ types:
           body:
             application/json:
               example:
-                message : Flight not found
+                message : Flight not found.
 
   /deleteByFno/{ID}:        
     delete:
