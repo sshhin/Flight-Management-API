@@ -363,6 +363,34 @@ types:
                 example:
                   message: Passenger not found
 
+    /showByName/{passengerName}:
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Passenger[]
+                example: !include Examples/PassengerGetAllExample.raml
+          400:
+            body:
+            application/json:
+              example:
+                message: Passenger not found
+  
+  /showByUIN/{passengerUIN}:
+    get:
+      responses:
+        200:
+          body:
+            application/json:
+              type: Passenger
+              example: !include Examples/PassengerExample.raml
+        400:
+          body:
+            application/json:
+              example:
+                message: Passenger not found
+
   /User:
     /showAllUsers:
       get:
