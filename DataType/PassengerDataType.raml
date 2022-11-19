@@ -2,10 +2,11 @@
 
 type: object
 properties:
-  pnrNumber?: integer
+  pnrNumber: integer
   passengerName: string
   passengerAge: integer
   passengerUIN: integer
   luggage:
     type: number
     multipleOf: 0.01
+  booking: !include BookingDataType.raml
