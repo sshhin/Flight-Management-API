@@ -285,10 +285,8 @@ types:
                 type: Passenger[]
                 example: !include Examples/PassengerGetAllExample.raml
 
-    /addPassenger:
+    /addPassenger/{bookingId}:
       post:
-        queryParameters:
-          
         body:
           application/json:
             type: Passenger
