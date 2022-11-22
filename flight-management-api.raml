@@ -22,7 +22,13 @@ types:
                 example: !include Examples/AirportGetAllExample.raml
     
     /showAirportsInXml:
-      
+      get:
+        responses:
+          200:
+            body:
+              application/xml:
+                type: Airport[]
+                example: 
 
     /addAirport:
       post:
