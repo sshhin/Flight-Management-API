@@ -423,7 +423,15 @@ types:
 
     /showUsersInXml:
       get:
-        
+        description: User details
+        queryParameters:
+          type:
+            required: false
+            enum:
+              - Admin
+              - User
+        responses:
+          200:
 
     /addUser:            
       post:
