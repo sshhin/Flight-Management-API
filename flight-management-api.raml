@@ -300,7 +300,13 @@ types:
 
     /showByDepartureInXml/{departureDate}:
       get:
-        
+        responses:
+          200:
+            body:
+              application/xml:
+                type: Schedule[]
+                example: !include Examples/ScheduleGetAllExample.raml
+          
 
   /passenger:
     /showAllPassengers:
