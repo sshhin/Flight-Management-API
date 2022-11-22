@@ -327,7 +327,9 @@ types:
         responses:
           200:
             body:
-              
+              application/xml:
+                type: Passenger[]
+                example: !include Examples/
 
     /addPassenger/{bookingId}:
       post:
