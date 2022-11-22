@@ -306,7 +306,11 @@ types:
               application/xml:
                 type: Schedule[]
                 example: !include Examples/ScheduleGetAllExample.raml
-          
+          400:
+            body:
+              application/json:
+                example:
+                  message: Schedule not found
 
   /passenger:
     /showAllPassengers:
