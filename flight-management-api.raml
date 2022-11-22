@@ -694,7 +694,13 @@ types:
           200:
             body:
               application/xml:
-                
+                type: Booking[]
+                example: !include Examples/BookingGetAllExample.raml
+          400:
+            body:
+              application/json:
+                example:
+                  message: B
     /modifyBooking/{bookingId}:
       put:
         body:
