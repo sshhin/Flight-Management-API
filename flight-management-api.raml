@@ -643,7 +643,11 @@ types:
               application/xml:
                 type: ScheduledFlight[]
                 example: !include Examples/ScheduledFlightsGetAllExample.raml
-          
+          400:
+            body:
+              application/json:
+                example:
+                  message: Scheduled flight not found
 
   /booking:
     /showAllBookings:
