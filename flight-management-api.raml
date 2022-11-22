@@ -640,7 +640,10 @@ types:
         responses:
           200:
             body:
-              
+              application/xml:
+                type: ScheduledFlight[]
+                example: !include Examples/ScheduledFlightsGetAllExample.raml
+          
 
   /booking:
     /showAllBookings:
