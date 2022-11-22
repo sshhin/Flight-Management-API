@@ -689,7 +689,10 @@ types:
                   message: Booking not found
 
     /showBySfidInXml/{sfid}:
-                    
+      get:
+        responses:
+          200:
+                          
 
     /modifyBooking/{bookingId}:
       put:
@@ -855,4 +858,5 @@ types:
             body:
               application/xml:
                 type: Flight[]
-                example: !include Examples/FlightGetAllExample.raml             
+                example: !include Examples/FlightGetAllExample.raml
+                       
