@@ -455,7 +455,12 @@ types:
               application/json:
                 example:
                   message: Welcome user
-          
+          500:
+            body:
+              application/json:
+                example:
+                  message: Invalid username or password
+
     /showAllUsers:
       get:
         description: User details
