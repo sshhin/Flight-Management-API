@@ -447,7 +447,13 @@ types:
         queryParameters:
           userName:
             required: true
-          
+          userPassword:
+            required: true
+        responses:
+          200:
+            body:
+              application/json:
+                
     /showAllUsers:
       get:
         description: User details
