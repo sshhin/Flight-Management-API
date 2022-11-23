@@ -326,7 +326,6 @@ types:
             body:
               application/xml:
                 type: Passenger[]
-                example: !include Examples/PassengerGetAllExample.raml
 
     /addPassenger/{bookingId}:
       post:
@@ -488,7 +487,6 @@ types:
             body:
               application/xml:
                 type: User[]
-                example: !include Examples/UserGetAllExample.raml
 
     /addUser:            
       post:
@@ -711,7 +709,6 @@ types:
             body:
               application/xml:
                 type: ScheduledFlight[]
-                example: !include Examples/ScheduledFlightsGetAllExample.raml
           400:
             body:
               application/json:
@@ -778,7 +775,6 @@ types:
             body:
               application/xml:
                 type: Booking[]
-                example: !include Examples/BookingGetAllExample.raml
           400:
             body:
               application/json:
