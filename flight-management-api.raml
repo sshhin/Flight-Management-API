@@ -438,7 +438,12 @@ types:
                   message: Passenger not found
 
     /showByBookingId/{bookingId}:
-      
+      get:
+        responses:
+          200:
+            body:
+              application/json:
+                type: Passenger[]
 
   /user:
     /loginUser:
