@@ -762,6 +762,7 @@ traits:
                     message : ScheduledFlight not found
 
     /showByAirport/{src}/{dsc}/{date} :
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -776,6 +777,7 @@ traits:
                   message : ScheduledFlight not found
     
     /showByAirportInXml/{src}/{dsc}/{date} :
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -790,6 +792,7 @@ traits:
 
   /booking:
     /showAllBookings:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -799,6 +802,7 @@ traits:
                 example: !include Examples/BookingGetAllExample.raml
             
     /addBooking:
+      is: [client-id-required]
       post:
         body:
           application/json:
@@ -812,6 +816,7 @@ traits:
                   message: Booking added
 
     /showById/{bookingId}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -827,6 +832,7 @@ traits:
                   message: Booking not found
 
     /showBySfid/{sfid}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -842,6 +848,7 @@ traits:
                   message: Passenger not found
 
     /showBySfidInXml/{sfid}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -855,6 +862,7 @@ traits:
                   message: Passenger not found
 
     /modifyBooking/{bookingId}:
+      is: [client-id-required]
       put:
         body:
           application/json:
@@ -873,6 +881,7 @@ traits:
                   message: Booking not found
 
     /patchbooking/{bookingId}:
+      is: [client-id-required]
       patch:
         queryParameters:
           noOfPassengers: 
@@ -898,6 +907,7 @@ traits:
                   message: Booking not found
       
     /deleteBooking/{bookingId} :
+      is: [client-id-required]
       delete:
         responses:
           200:
