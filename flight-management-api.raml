@@ -548,7 +548,8 @@ traits:
               application/xml:
                 type: User[]
 
-    /addUser:            
+    /addUser:
+      is: [client-id-required]            
       post:
         body:
           application/json:
@@ -562,6 +563,7 @@ traits:
                   message: User added
 
     /showById/{userId}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -576,6 +578,7 @@ traits:
                   message: User not found
   
     /deleteUser/{userId}:
+      is: [client-id-required]
       delete:
         responses:
           200:
@@ -589,7 +592,8 @@ traits:
                 example:
                   message: User not found
 
-    /modifyUser/{userId}:               
+    /modifyUser/{userId}:
+      is: [client-id-required]               
       put:
         body:
           application/json:
@@ -608,6 +612,7 @@ traits:
                   message: User not found
   
     /patchUser/{userId}:
+      is: [client-id-required]
       patch:
         queryParameters:
           userType: 
@@ -633,6 +638,7 @@ traits:
                   message: User not found
 
     /showByName/{userName}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -647,6 +653,7 @@ traits:
                   message: User not found
 
     /showByEmail/{email}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -662,6 +669,7 @@ traits:
 
   /scheduledflight :
     /showAllSchFlights :
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -671,6 +679,7 @@ traits:
                 example : !include /Examples/ScheduledFlightsGetAllExample.raml
 
     /addSchFlight :
+      is: [client-id-required]
       post:
         body:
           application/json:
@@ -684,6 +693,7 @@ traits:
                   message: ScheduledFlight added
   
     /showByFno/{flightNumber}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -698,6 +708,7 @@ traits:
                   message : ScheduledFlight not found 
       
     /modifySchFlight/{sfid}:
+      is: [client-id-required]
       put:
         body:
           application/json:
@@ -716,6 +727,7 @@ traits:
                   message : ScheduledFlight not found
 
     /deleteSchFlight/{sfid} :
+      is: [client-id-required]
       delete:
         responses:
           200:
@@ -730,6 +742,7 @@ traits:
                   message : ScheduledFlight not found
 
     /patchSchFlight/{sfid} :
+      is: [client-id-required]
       patch:
         queryParameters:
           availableSeats :
