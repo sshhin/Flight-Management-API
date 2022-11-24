@@ -236,6 +236,7 @@ traits:
                   message: Schedule not found
 
     /patchSchedule/{scheduleId}:
+      is: [client-id-required]
       patch:
         queryParameters:
           arrivalTime:
@@ -259,6 +260,7 @@ traits:
                   message: Schedule not found
 
     /showBySource/{airportName}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -273,6 +275,7 @@ traits:
                   message: Schedule not found
 
     /showByDestination/{airportName}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -287,6 +290,7 @@ traits:
                   message: Schedule not found
               
     /showByArrival/{arrivalDate}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -301,6 +305,7 @@ traits:
                   message: Schedule not found
   
     /showByDeparture/{departureDate}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -315,6 +320,7 @@ traits:
                   message: Schedule not found
     
     /showBySourceInXml/{airportName}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -328,6 +334,7 @@ traits:
                   message: Schedule not found
 
     /showByDepartureInXml/{departureDate}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -342,6 +349,7 @@ traits:
 
   /passenger:
     /showAllPassengers:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -351,6 +359,7 @@ traits:
                 example: !include Examples/PassengerGetAllExample.raml
 
     /addPassenger/{bookingId}:
+      is: [client-id-required]
       post:
         body:
           application/json:
@@ -364,6 +373,7 @@ traits:
                   message: Passenger added
   
     /showById/{pnrNumber}:
+      is: [client-id-required]
       get:
         responses:
           200:
