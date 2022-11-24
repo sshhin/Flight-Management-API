@@ -438,7 +438,13 @@ types:
                 type: Passenger[]
                 example: !include Examples/PassengerGetAllExample.raml
 
-    /showByBookingInXml/{bookingId}
+    /showByBookingInXml/{bookingId}:
+      get:
+        responses:
+          200:
+            body:
+              application/xml:
+                type: Passenger[]
 
   /user:
     /loginUser:
