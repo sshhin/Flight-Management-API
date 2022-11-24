@@ -388,6 +388,7 @@ traits:
                   message: Passenger not found
   
     /modifyPassenger/{pnrNumber}:
+      is: [client-id-required]
       put:
         body:
           application/json:
@@ -406,6 +407,7 @@ traits:
                   message: Passenger not found
   
     /deletePassenger/{pnrNumber}:
+      is: [client-id-required]
       delete:
         responses:
           200:
@@ -420,6 +422,7 @@ traits:
                   message: Passenger not found
 
     /patchPassenger/{pnrNumber}:
+      is: [client-id-required]
       patch:
         queryParameters:
           passengerName:
@@ -443,6 +446,7 @@ traits:
                   message: Passenger not found
 
     /showByName/{passengerName}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -457,6 +461,7 @@ traits:
                   message: Passenger not found
   
     /showByUIN/{passengerUIN}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -471,6 +476,7 @@ traits:
                   message: Passenger not found
 
     /showByBookingId/{bookingId}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -480,6 +486,7 @@ traits:
                 example: !include Examples/PassengerGetAllExample.raml
 
     /showByBookingInXml/{bookingId}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -489,6 +496,7 @@ traits:
 
   /user:
     /loginUser:
+      is: [client-id-required]
       get:
         queryParameters:
           userName:
@@ -508,6 +516,7 @@ traits:
                   message: Invalid username or password
 
     /showAllUsers:
+      is: [client-id-required]
       get:
         description: User details
         queryParameters:
@@ -524,6 +533,7 @@ traits:
                 example: !include Examples/UserGetAllExample.raml
 
     /showUsersInXml:
+      is: [client-id-required]
       get:
         description: User details
         queryParameters:
