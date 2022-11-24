@@ -132,7 +132,7 @@ traits:
                     message: Airport not found
 
     /showByLocation/{airportLocation}:
-      
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -147,6 +147,7 @@ traits:
                   message: Airport not found
                 
     /showByName/{airportName}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -162,6 +163,7 @@ traits:
 
   /schedule:
     /showAllSchedules:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -171,6 +173,7 @@ traits:
                 example: !include Examples/ScheduleGetAllExample.raml
 
     /addSchedule:
+      is: [client-id-required]
       post:
         body:
           application/json:
@@ -184,6 +187,7 @@ traits:
                   message: Schedule added
   
     /showById/{scheduleId}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -198,6 +202,7 @@ traits:
                   message: Schedule not found
   
     /modifySchedule/{scheduleId}:
+      is: [client-id-required]
       put:
         body:
           application/json:
@@ -216,6 +221,7 @@ traits:
                   message: Schedule not found
   
     /deleteSchedule/{scheduleId}:
+      is: [client-id-required]
       delete:
         responses:
           200:
