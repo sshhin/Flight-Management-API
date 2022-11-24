@@ -30,7 +30,7 @@ traits:
 /api:
   /airport:
     /showAllAirports:
-      is: []
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -40,6 +40,7 @@ traits:
                 example: !include Examples/AirportGetAllExample.raml
     
     /showAirportsInXml:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -48,6 +49,7 @@ traits:
                 type: Airport[]
 
     /addAirport:
+      is: [client-id-required]
       post:
         body:
           application/json:
@@ -61,6 +63,7 @@ traits:
                   message: Airport added
   
     /showById/{airportCode}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -75,6 +78,7 @@ traits:
                   message: Airport not found
 
     /modifyAirport/{airportCode}:
+      is: [client-id-required]
       put:
         body:
           application/json:
@@ -93,6 +97,7 @@ traits:
                   message: Airport not found
 
     /deleteAirport/{airportCode}:
+      is: [client-id-required]
       delete:
         responses:
           200:
@@ -107,6 +112,7 @@ traits:
                   message: Airport not found
 
     /patchAirport/{airportCode}:
+      is: [client-id-required]
       patch:
         queryParameters:
           airportName:
@@ -126,6 +132,7 @@ traits:
                     message: Airport not found
 
     /showByLocation/{airportLocation}:
+      
       get:
         responses:
           200:
