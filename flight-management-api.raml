@@ -319,14 +319,6 @@ types:
                 type: Passenger[]
                 example: !include Examples/PassengerGetAllExample.raml
 
-    /showPassengersInXml:
-      get:
-        responses:
-          200:
-            body:
-              application/xml:
-                type: Passenger[]
-
     /addPassenger/{bookingId}:
       post:
         body:
@@ -445,6 +437,8 @@ types:
               application/json:
                 type: Passenger[]
                 example: !include Examples/PassengerGetAllExample.raml
+
+    /showByBookingInXml/{bookingId}
 
   /user:
     /loginUser:
