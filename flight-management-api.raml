@@ -923,6 +923,7 @@ traits:
 
   /flights:
     /showAllFlights :
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -931,7 +932,8 @@ traits:
                 type: Flight[]
                 example: !include /Examples/FlightGetAllExample.raml
 
-    /addFlight:            
+    /addFlight:
+      is: [client-id-required]            
       post:
         body:
           application/json:
@@ -945,6 +947,7 @@ traits:
                   message: Flight added
 
     /showByFno/{flightNumber}:
+      is: [client-id-required]
       get:
         responses:
           200:
@@ -958,7 +961,8 @@ traits:
                 example:
                   message : Flight not found
 
-    /deleteByFno/{flightNumber}:        
+    /deleteByFno/{flightNumber}:
+      is: [client-id-required]        
       delete:
         responses:
           200:
@@ -973,6 +977,7 @@ traits:
                   message : Flight not found
   
     /modifyFlight/{flightNumber}:
+      is: [client-id-required]
       put:
         body:
           application/json:
